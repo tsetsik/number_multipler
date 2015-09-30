@@ -1,6 +1,8 @@
+require './lib/prime_multiplier/helpers/prime_helper'
+
 module PrimeMultiplier
   class NumberGenerator
-    FIRST_PRIME = 2
+    include PrimeMultiplier::PrimeHelper
 
     def initialize
       @primes = [FIRST_PRIME]
@@ -16,13 +18,6 @@ module PrimeMultiplier
     end
 
     private
-
-    def prime?(number)
-      FIRST_PRIME.upto(Math.sqrt(number).to_i) do |divider|
-        return false if number % divider == 0
-      end
-      true
-    end
 
     def next_posible
       @current += 1
