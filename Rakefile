@@ -2,21 +2,21 @@ require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 
-require "#{File.dirname(__FILE__)}/lib/prime_multiplier"
+require "#{File.dirname(__FILE__)}/lib/number_multiplier"
 
 RuboCop::RakeTask.new(:rubocop)
 RSpec::Core::RakeTask.new(:spec)
 
 task default: [:rubocop, :spec]
 
-desc 'Task for runing prime generator gem'
-task :prime_multiplier_table, [:count] do |_, args|
-  args.with_defaults(count: 10)
+desc 'Task for runing number generator gem'
+task :number_multiplier_table, [:count, :type] do |_, args|
+  args.with_defaults(count: 10, type: 'primes')
 
-  num_primes = args[:count].to_i
+  num = args[:count].to_i
 
-  primes = PrimeMultiplier::NumberGenerator.new.call(num_primes)
-  multiplied_primes = PrimeMultiplier::Multiply.new.call(primes, num_primes)
+  numbers = NumberMultiplier::GenericGenerator.call(args[:type], num)
+  multiplied_numbers = NumberMultiplier::Multiply.new.call(numbers, num)
 
-  PrimeMultiplier::Table.new(primes: primes, multiplied_primes: multiplied_primes).call
+  NumberMultiplier::Table.new(numbers: numbers, multiplied_numbers: multiplied_numbers).call
 end

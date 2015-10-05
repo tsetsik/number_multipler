@@ -1,5 +1,5 @@
-require './lib/prime_multiplier/helpers/prime_helper'
+require './lib/number_multiplier/helpers/number_helper'
 
 module NumberGeneratorHelper
-  include PrimeMultiplier::PrimeHelper
+  include NumberMultiplier::NumberHelper
 end

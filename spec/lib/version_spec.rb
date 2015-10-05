@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe PrimeMultiplier::Version do
+RSpec.describe NumberMultiplier::Version do
   context 'has version constants' do
     it { expect(described_class::MAJOR).to be_integer }
     it { expect(described_class::MINOR).to be_integer }

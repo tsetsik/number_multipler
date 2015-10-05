@@ -6,7 +6,7 @@ SimpleCov.start do
 end
 
 require 'support/number_generator_helper'
-require 'prime_multiplier'
+require 'number_multiplier'
 
 RSpec.configure do |c|
   c.include NumberGeneratorHelper

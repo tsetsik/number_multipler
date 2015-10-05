@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe PrimeMultiplier::NumberGenerator do
+RSpec.describe NumberMultiplier::PrimeGenerator do
   subject do
     described_class.new
   end

@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'prime_multiplier/version'
+require 'number_multiplier/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'prime_multiplier'
-  spec.version       = PrimeMultiplier::Version
+  spec.name          = 'number_multiplier'
+  spec.version       = NumberMultiplier::Version
   spec.authors       = ['tsetsik']
   spec.email         = ['tsetsik@gmail.com']
 
-  spec.summary       = %q{prime multipler table for given numbers}
-  spec.description   = %q{prime multiplier table for given numbers that ouputs them in the console}
-  spec.homepage      = 'https://github.com/tsetsik/prime_multipler'
+  spec.summary       = %q{number multipler table for given numbers}
+  spec.description   = %q{number multiplier table for given numbers that ouputs them in the console}
+  spec.homepage      = 'https://github.com/tsetsik/number_multipler'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

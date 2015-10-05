@@ -1,4 +1,4 @@
-module PrimeMultiplier
+module NumberMultiplier
   class Version
     MAJOR = 0
     MINOR = 1

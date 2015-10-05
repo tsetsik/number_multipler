@@ -1,0 +1,6 @@
+require './lib/number_multiplier/version'
+require './lib/number_multiplier/generic_generator'
+require './lib/number_multiplier/prime_generator'
+require './lib/number_multiplier/fibunachi_generator'
+require './lib/number_multiplier/multiply'
+require './lib/number_multiplier/table'

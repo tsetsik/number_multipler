@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-RSpec.describe PrimeMultiplier::Table do
+RSpec.describe NumberMultiplier::Table do
   subject do
-    described_class.new(primes: primes, multiplied_primes: multiplied_primes)
+    described_class.new(numbers: numbers, multiplied_numbers: multiplied_numbers)
   end
 
   context 'when valid primes and multiplied primes are printed out' do
-    let(:num_primes) { 10 }
-    let(:primes) { PrimeMultiplier::NumberGenerator.new.call(num_primes) }
-    let(:multiplied_primes) { PrimeMultiplier::Multiply.new.call(primes, num_primes) }
+    let(:num) { 10 }
+    let(:numbers) { (1..10).to_a }
+    let(:multiplied_numbers) { NumberMultiplier::Multiply.new.call(numbers, num) }
 
     it do
       expect(ConsoleTable).to receive(:define).once
@@ -16,9 +16,9 @@ RSpec.describe PrimeMultiplier::Table do
     end
   end
 
-  context 'when empty primes and multiplied primes are used' do
-    let(:primes) { [] }
-    let(:multiplied_primes) { [] }
+  context 'when empty numbers and multiplied numbers are used' do
+    let(:numbers) { [] }
+    let(:multiplied_numbers) { [] }
 
     it do
       expect(ConsoleTable).not_to receive(:define)
